@@ -1,6 +1,6 @@
 # Respostas
 
-Nome:
+Nome: Arthur José Bandeira
 
 Como responder: nas questões objetivas, escreva a letra depois de **Resposta:**. A justificativa é opcional, mas ajuda na correção. Nas discursivas, escreva seu texto logo abaixo do enunciado.
 
@@ -37,9 +37,9 @@ C) A asserção I é uma proposição verdadeira, e a II é uma proposição fal
 D) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
 E) As asserções I e II são proposições falsas.
 
-**Resposta:**
+**Resposta: A**
 
-**Justificativa (opcional):**
+**Justificativa (opcional): Justifica porque o Service é recebido pelo construtor ao invés de ser criado como new dentro do controller, reduzindo o acoplamento**
 
 ---
 
@@ -66,9 +66,9 @@ C) `const company = db.prepare('SELECT * FROM companies WHERE id = ' + companyId
 D) `res.send(\`<h1>${name} created</h1>\`)`
 E) `const net = gross - gross * 0.11`
 
-**Resposta:**
+**Resposta:C**
 
-**Justificativa (opcional):**
+**Justificativa (opcional):Regra de negócio e persistência vão no service, nesse caso, vai no repository e o service chama ele, essa linha é persistência**
 
 ---
 
@@ -94,9 +94,9 @@ C) II e IV, apenas.
 D) I, II e IV, apenas.
 E) I, II, III e IV.
 
-**Resposta:**
+**Resposta:D**
 
-**Justificativa (opcional):**
+**Justificativa (opcional):III é simplemente absurda**
 
 ---
 
@@ -128,9 +128,9 @@ C) II, apenas.
 D) II e III, apenas.
 E) I, II e III.
 
-**Resposta:**
+**Resposta:B**
 
-**Justificativa (opcional):**
+**Justificativa (opcional):III seria inviável**
 
 ---
 
@@ -152,7 +152,7 @@ C) A asserção I é uma proposição verdadeira, e a II é uma proposição fal
 D) A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.
 E) As asserções I e II são proposições falsas.
 
-**Resposta:**
+**Resposta:C**
 
 **Justificativa (opcional):**
 
@@ -170,7 +170,7 @@ c) cite os arquivos do seu projeto que seriam alterados para atendê-lo.
 
 (Até 10 linhas.)
 
-**Resposta:**
+**Resposta:O B exige mais esforço, separar as resposabilidades reduz o impacto, porém nessse caso o Service precisa puxar o estado da empresa e aplicar a alíquota correspondente no cálculo do INSS, alterando employee.service.ts e caso precisasse do estado company.repository.ts ou company.service.ts, a única coisa que não precisaria usar seriam as rotas do controller que podem ser reutilizadas**
 
 ---
 
@@ -186,4 +186,4 @@ c) descreva como você corrigiu, ou como corrigiria.
 
 (Até 10 linhas.)
 
-**Resposta:**
+**Resposta:O erro é o controller monólito, que foi exemplificado no legacy.ts, o POST employees faz tudo nesse código, todas as responsabilidades estão no controller, para corrigir precisa separar cada uma das responsabilidades em camadas.**
