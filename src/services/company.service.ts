@@ -1,7 +1,20 @@
 import { CompanyRepository } from '../repositories/company.repository'
 import { EmployeeRepository } from '../repositories/employee.repository'
 import { NewCompany } from '../dtos/company.dtos'
-import { NotFound, RuleViolation } from '../services/employee.service'
+
+export class NotFound extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'NotFound'
+  }
+}
+
+export class RuleViolation extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'RuleViolation'
+  }
+}
 
 export class CompanyService {
   constructor(

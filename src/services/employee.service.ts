@@ -1,4 +1,4 @@
-import { EmployeeRepository } from '../repositories/employee.respository'
+import { EmployeeRepository } from '../repositories/employee.repository'
 import { CompanyRepository } from '../repositories/company.repository'
 import { NewEmployee } from '../dtos/employee.dto'
 
