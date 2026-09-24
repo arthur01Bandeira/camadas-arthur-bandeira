@@ -1,20 +1,7 @@
 import { EmployeeRepository } from '../repositories/employee.repository'
 import { CompanyRepository } from '../repositories/company.repository'
 import { NewEmployee } from '../dtos/employee.dto'
-
-export class NotFound extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'NotFound'
-  }
-}
-
-export class RuleViolation extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'RuleViolation'
-  }
-}
+import { NotFound, RuleViolation } from '../errors'
 
 const MINIMUM_SALARY = 1518
 const INSS_RATE = 0.11
@@ -29,7 +16,7 @@ export class EmployeeService {
     const company = this.companyRepo.findById(data.companyId)
 
     if (!company) {
-      throw new NotFound('company not found')
+      throw new NotFound('company')
     }
 
     if (data.salary < MINIMUM_SALARY) {

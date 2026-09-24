@@ -66,9 +66,9 @@ C) `const company = db.prepare('SELECT * FROM companies WHERE id = ' + companyId
 D) `res.send(\`<h1>${name} created</h1>\`)`
 E) `const net = gross - gross * 0.11`
 
-**Resposta:C**
+**Resposta:E**
 
-**Justificativa (opcional):Regra de negócio e persistência vão no service, nesse caso, vai no repository e o service chama ele, essa linha é persistência**
+**Justificativa (opcional):E é uma regra de negócio, que carateriza uma responsabilidade do service**
 
 ---
 

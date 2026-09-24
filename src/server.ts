@@ -9,9 +9,9 @@ import { EmployeeController } from './controllers/employee.controller'
 import { employeeRoutes } from './routes/employee.routes'
 import { errorMiddleware } from './middlewares/error.middleware'
 
-import { CompanyService } from './services/employee.service'
-import { CompanyController } from './controllers/employee.controller'
-import { companyRoutes } from './routes/employee.routes'  
+import { CompanyService } from './services/company.service'
+import { CompanyController } from './controllers/company.controller'
+import { companyRoutes } from './routes/company.routes'
 
 // Composição: o único lugar do projeto que conhece as classes concretas.
 const db = new Database(path.join(__dirname, '..', 'data.db'))

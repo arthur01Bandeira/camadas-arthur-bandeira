@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 import { CompanyService } from '../services/company.service'
-import { companyDTO } from '../dtos/company.dto'
+import { companyDTO } from '../dtos/company.dtos'
 
 export class CompanyController {
   constructor(private service: CompanyService) {}

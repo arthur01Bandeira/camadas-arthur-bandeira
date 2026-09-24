@@ -1,9 +1,4 @@
-export class InvalidInput extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'InvalidInput'
-  }
-}
+import { InvalidInput } from '../errors'
 
 export type NewEmployee = {
   name: string
@@ -14,7 +9,7 @@ export type NewEmployee = {
 
 export function employeeDTO(body: unknown): NewEmployee {
   if (!body || typeof body !== 'object') {
-    throw new InvalidInput('invalid body')
+    throw new InvalidInput(['body'])
   }
 
   const data = body as Record<string, unknown>
@@ -23,25 +18,25 @@ export function employeeDTO(body: unknown): NewEmployee {
     typeof data.name !== 'string' ||
     data.name.length < 3
   ) {
-    throw new InvalidInput('invalid name')
+    throw new InvalidInput(['name'])
   }
 
   if (
     typeof data.email !== 'string' ||
     !data.email.includes('@')
   ) {
-    throw new InvalidInput('invalid email')
+    throw new InvalidInput(['email'])
   }
 
   if (
     typeof data.salary !== 'number' &&
     typeof data.salary !== 'string'
   ) {
-    throw new InvalidInput('invalid salary')
+    throw new InvalidInput(['salary'])
   }
 
   if (typeof data.companyId !== 'number') {
-    throw new InvalidInput('invalid companyId')
+    throw new InvalidInput(['companyId'])
   }
 
   return {

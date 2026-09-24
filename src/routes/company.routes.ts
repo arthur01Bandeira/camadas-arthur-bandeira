@@ -7,11 +7,8 @@ export function companyRoutes(
   const router = Router()
 
   router.get('/companies', controller.getAll)
-
   router.get('/companies/:id', controller.getById)
-
   router.post('/companies', controller.create)
-
   router.delete('/companies/:id', controller.delete)
 
   return router

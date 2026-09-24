@@ -1,20 +1,7 @@
 import { CompanyRepository } from '../repositories/company.repository'
 import { EmployeeRepository } from '../repositories/employee.repository'
 import { NewCompany } from '../dtos/company.dtos'
-
-export class NotFound extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'NotFound'
-  }
-}
-
-export class RuleViolation extends Error {
-  constructor(message: string) {
-    super(message)
-    this.name = 'RuleViolation'
-  }
-}
+import { NotFound, RuleViolation } from '../errors'
 
 export class CompanyService {
   constructor(
@@ -30,7 +17,7 @@ export class CompanyService {
     const company = this.companyRepo.findById(id)
 
     if (!company) {
-      throw new NotFound('company not found')
+      throw new NotFound('company')
     }
 
     return company
@@ -50,7 +37,7 @@ export class CompanyService {
     const company = this.companyRepo.findById(id)
 
     if (!company) {
-      throw new NotFound('company not found')
+      throw new NotFound('company')
     }
 
     const employees = this.employeeRepo.findByCompany(id)
